@@ -12,7 +12,6 @@ describe "User can vote on a story" do
     click_link "Home"
     expect(page).to have_content "#{story.url}"
     click_button "upvote"
-    binding.pry
     expect(page).to_not have_button("upvote")
     
   end

@@ -4,7 +4,7 @@
 <% @stories.each do |story| %>
 <%=  story.url %>
 
-
+  <% unless story.user_votes.include?(current_user) %>
   <%= form_tag upvote_path(story) do %>
   <%= hidden_field_tag :story, story.id %>
   <%= submit_tag("upvote") %>
@@ -14,7 +14,7 @@
   <%= hidden_field_tag :story, story.id %>
   <%= submit_tag("downvote") %>
   <%end%>
-
+ <%end%>
   
 <% end %>
 
