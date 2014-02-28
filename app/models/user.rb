@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :stories
+  has_many :votes
+  has_many :voted_stories ,through: :votes, source: :stories
 
 end
