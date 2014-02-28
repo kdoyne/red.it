@@ -10,10 +10,10 @@ describe "User can vote on a story" do
     visit root_path
     login(user)
     click_link "Home"
-
     expect(page).to have_content "#{story.url}"
-    click_link "upvote"
-    expect(page).to_not have_content("upvote" || "downvote")
+    click_button "upvote"
+    binding.pry
+    expect(page).to_not have_button("upvote")
     
   end
 

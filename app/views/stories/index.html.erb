@@ -3,14 +3,18 @@
 
 <% @stories.each do |story| %>
 <%=  story.url %>
+
+
   <%= form_tag upvote_path(story) do %>
-  <%= hidden_field_tag :story, story.id %>
+  <%= hidden_field_tag :story, story %>
   <%= submit_tag("upvote") %>
   <%end%>
+
   <%= form_tag downvote_path(story) do %>
-  <%= hidden_field_tag :story, story.id %>
+  <%= hidden_field_tag :story, story %>
   <%= submit_tag("downvote") %>
   <%end%>
+
   
 <% end %>
 

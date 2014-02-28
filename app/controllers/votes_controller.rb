@@ -1,7 +1,8 @@
-class Votes < ApplicationController
+class VotesController < ApplicationController
 
   def create_upvote
-    @vote = Vote.new(vote_params)
+    binding.pry
+    @vote = Vote.new(params[:story])
     @vote.user = current_user
     @vote.choice = 1
     @vote.save
@@ -20,7 +21,7 @@ class Votes < ApplicationController
   private
 
   def vote_params
-    params.permit(:story_id)
+    params.permit(:story)
   end
 
 end

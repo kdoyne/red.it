@@ -8,7 +8,7 @@ Redit::Application.routes.draw do
   post "/session", to: "sessions#create"
   delete "/session", to: "sessions#destroy"
 
-  post "/story/upvote", to: "votes#create_upvote", as: "upvote"
-  post "/story/downvote", to: "votes#create_downvote", as: "downvote"
+  post "/votes", to: "votes#create_upvote", as: "upvote"
+  post "/votes", to: "votes#create_downvote", as: "downvote"
 
 end
