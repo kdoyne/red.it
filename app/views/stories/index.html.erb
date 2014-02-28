@@ -6,12 +6,12 @@
 
 
   <%= form_tag upvote_path(story) do %>
-  <%= hidden_field_tag :story, story %>
+  <%= hidden_field_tag :story, story.id %>
   <%= submit_tag("upvote") %>
   <%end%>
 
   <%= form_tag downvote_path(story) do %>
-  <%= hidden_field_tag :story, story %>
+  <%= hidden_field_tag :story, story.id %>
   <%= submit_tag("downvote") %>
   <%end%>
 
